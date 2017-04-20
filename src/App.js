@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
+import Output from './Components/output';
 import axios from 'axios';
 
 class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			paras: 2,
+			paras: 4,
 			html: true,
 			text: ''
 		}
@@ -19,7 +20,9 @@ class App extends Component {
 	getSampleText() {
 		axios.get('http://hipsterjesus.com/api?paras='+ this.state.paras+'&html='+this.state.html)
 			.then((response) => {
-				this.setState({text: response.data.text}, function () {
+				this.setState({
+					text: response.data.text
+				}, function () {
 					console.log(this.state);
 				})
 			})
@@ -31,7 +34,7 @@ class App extends Component {
   	render() {
 	    return (
 	      <div className="App">
-	      	Hello
+	      	<Output value={this.state.text}/>
 	      </div>
 	    );
 	}
