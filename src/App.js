@@ -47,8 +47,8 @@ class App extends Component {
 
   	render() {
 	    return (
-	      <div className="App Container">
-	      	<h1>ReactJS Sample Text Generator</h1>
+	      <div className="App Container text-center">
+	      	<h1 className="text-center">ReactJS Sample Text Generator</h1>
 	      	<hr />
 	      	<form className='form-inline'>
 	      		<div className="form-group">
@@ -60,6 +60,7 @@ class App extends Component {
 	      			<Select value= {this.state.html} onChange={this.showHtml.bind(this)} />
 	      		</div>
 	      	</form>
+	      	<br />
 	      	<Output value={this.state.text}/>
 	      </div>
 	    );

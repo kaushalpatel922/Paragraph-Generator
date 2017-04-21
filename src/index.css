@@ -1,3 +1,7 @@
 input {
 	margin-right: 25px;
 }
+
+label {
+	font-size: 1em;
+}
